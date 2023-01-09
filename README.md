@@ -1,4 +1,4 @@
-# Aplicativo Androido para Calcular o Custo em Tecido
+# Aplicativo Android para Calcular o Custo em Tecido
 
 <p> Com o bjetivo de auxiliar minha esposa, que faz costuras em casa, e constantemente pedia para fazer o cálculo para ela do valor que ela gastava para fazer uma peça, levando em conta o total de tecido utilizado, o valor que ela comprava o tecido por metro quadrado, e o valor total dos acessórios utilizados.<p>
 
