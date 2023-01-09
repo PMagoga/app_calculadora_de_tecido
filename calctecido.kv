@@ -1,0 +1,124 @@
+telas:
+
+<ScreenManager>:
+
+    Screen:
+        name: 'tela inicial'
+
+        BoxLayout:
+            padding: "10dp"
+            orientation: "vertical"
+            spacing: "5dp"
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: '5dp'
+                padding: '5dp'
+
+                Image:
+                    source: 'lele.png'
+                    size_hint: 1, 2
+                Button:
+                    text: "Calcular Tecido"
+                    text_size: self.size
+                    halign: 'center'
+                    valign: 'middle'
+                    background_color: 'blue'
+                    on_press: root.transition.direction = 'left' ; root.current = 'tela 2'
+                    size_hint: .7,.5
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+                Button:
+                    text: 'SAIR'
+                    background_color: 'red'
+                    on_press: app.stop()
+                    size_hint: .7,.5
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+    Screen:
+        name: 'tela 2'
+
+        BoxLayout:
+            orientation: 'vertical'
+            ActionBar:
+                background_color: [0, 1, 0, 0.7]
+                bold: True
+                ActionView:
+                    ActionPrevious:
+                        app_icon: 'icon.png'
+                        title: 'Calculadora de Tecidos'
+                        on_press: root.transition.direction = 'right' ; root.current = 'tela inicial'
+            BoxLayout:
+                padding: "5dp"
+                spacing: "5dp"
+                orientation: "vertical"
+                Label:
+                    text:'Insira o comprimento e a largura do tecido em CENTÍMETROS, não use vírgula, e para os valores em reais utilize PONTO ao invés da vírgula'
+                    color: 'black'
+                    bold: True
+                    text_size: self.size
+                    halign: 'center'
+                    valign: 'middle'
+                GridLayout:
+                    rows: 4
+                    cols: 2
+                    padding: [0.2, 0.2, 0.2, 0.2]
+                    spacing: [0.2, 0.2]
+                    Label:
+                        text: 'Comprimento'
+                        color: 'black'
+                        bold: True
+                        text_size: self.size
+                        halign: 'center'
+                        valign: 'middle'
+                    TextInput:
+                        id: id_comprimento
+                        halign: 'left'
+                        valign: 'middle'
+                    Label:
+                        text: 'Largura'
+                        color: 'black'
+                        bold: True
+                        text_size: self.size
+                        halign: 'center'
+                        valign: 'middle'
+                    TextInput:
+                        id: id_largura
+                        halign: 'left'
+                        valign: 'middle'
+                    Label:
+                        text:'Custo do Tecido por m² em R$'
+                        color: 'black'
+                        bold: True
+                        text_size: self.size
+                        halign: 'center'
+                        valign: 'middle'
+                    TextInput:
+                        id: id_custo_metro
+                        halign: 'left'
+                        valign: 'middle'
+                    Label:
+                        text:'Custos com Acessórios'
+                        color: 'black'
+                        bold: True
+                        text_size: self.size
+                        halign: 'center'
+                        valign: 'middle'
+                    TextInput:
+                        id: id_adicionais
+                        halign: 'left'
+                        valign: 'middle'
+                Button:
+                    text: "Calcular Tecido"
+                    background_color: 'blue'
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    on_release: root.resultado()
+                Label:
+                    id: id_total
+                    color: 'black'
+                    bold: True
+                    text_size: self.size
+                    halign: 'center'
+                    valign: 'middle'
+
+                    
